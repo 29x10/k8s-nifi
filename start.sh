@@ -65,6 +65,12 @@ prop_replace 'nifi.analytics.connection.model.implementation'   "${NIFI_ANALYTIC
 prop_replace 'nifi.analytics.connection.model.score.name'       "${NIFI_ANALYTICS_MODEL_SCORE_NAME:-rSquared}"
 prop_replace 'nifi.analytics.connection.model.score.threshold'  "${NIFI_ANALYTICS_MODEL_SCORE_THRESHOLD:-.90}"
 
+prop_replace 'nifi.flow.configuration.file'  "${NIFI_FLOWFILE_CONFIG:-../data/flow.xml.gz}"
+prop_replace 'nifi.database.directory'  "${NIFI_DATABASE_DIR:-../data/database_repository}"
+prop_replace 'nifi.flowfile.repository.directory'  "${NIFI_FLOWFILE_REPO_DIR:-../data/flowfile_repository}"
+prop_replace 'nifi.content.repository.directory.default'  "${NIFI_CONTENT_REPO_DIR:-../data/content_repository}"
+prop_replace 'nifi.provenance.repository.directory.default'  "${NIFI_PROV_REPO_DIR:-../data/provenance_repository}"
+
 . "${scripts_dir}/update_cluster_state_management.sh"
 
 # Check if we are secured or unsecured
